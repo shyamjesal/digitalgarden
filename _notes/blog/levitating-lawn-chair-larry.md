@@ -9,11 +9,11 @@ title: Levitating lawn chair Larry
 >
 > ― Mark Twain
 
-Imagine being a pilot, flying at an altitude of ~4,900m. You spot a lawn chair, flying in the sky using 45 weather balloons attached. On the chair is a man wearing sunglasses, with a bottle of soda and a sandwich. This is Larry Walters. 
+Imagine being a pilot, flying at an altitude of 4,900m. You spot a lawn-chair, flying in the sky using 45 weather balloons attached. On the chair is a man wearing sunglasses, with a bottle of soda and a sandwich. This is Larry Walters. 
 
 When Larry was 13 years old, he had a dream. A dream to fly, and on July 8, 1982, he flew. He flew way high and survived (thanks to his planning and some luck) to tell the tale.
 
-For the complete story, I would highly highly recommend watching this work of art by [Jon Bois](https://www.youtube.com/@jonbois "Jon's youtube").
+For the complete story, I would highly recommend watching this work of art by [Jon Bois](https://www.youtube.com/@jonbois "Jon's youtube").
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=E7w_v9J7iOc
 " target="_blank"><img src="http://img.youtube.com/vi/E7w_v9J7iOc/0.jpg" 
@@ -54,6 +54,4 @@ After his safe descent. The authorities tried to fine him and this was their res
 
 
 
-That is all for today. 
-
-
+That is all for today.
