@@ -1,4 +1,4 @@
 ---
-title: Books I love
+title: Bookshelf
 ---
 {% include goodreads.html %}
