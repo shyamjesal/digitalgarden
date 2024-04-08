@@ -3,7 +3,7 @@ title: Levitating lawn chair Larry
 ---
 
 <!-- ![Levitating lawn chair Larry](/assets/lawn-chair-larry.jpg "Levitating lawn chair Larry") -->
-<img src="/digitalgarden/assets/lawn-chair-larry.jpg" alt="Levitating lawn chair Larry" width="400"/>
+<img src="/assets/lawn-chair-larry.jpg" alt="Levitating lawn chair Larry" width="400"/>
 
 > “They did not know it was impossible so they did it”
 >
