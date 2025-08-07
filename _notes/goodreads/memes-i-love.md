@@ -1,5 +1,5 @@
 ---
-title: Memes I love
+title: Memes
 ---
 
 <img src="/assets/cache.jpg" alt="Pile of clothes cache" width="400"/>
