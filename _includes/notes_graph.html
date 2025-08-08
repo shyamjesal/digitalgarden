@@ -10,6 +10,30 @@
     transition: all 0.15s ease-out;
   }
 
+  .nodes image {
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+  }
+
+  .zoom-notification {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px;
+    border-radius: 4px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+  }
+  
+  .zoom-notification.show {
+    opacity: 1;
+  }
+
   .text text {
     cursor: pointer;
     fill: #333;
@@ -35,6 +59,8 @@
 </style>
 
 <div id="graph-wrapper">
+  <div id="graph-wrapper">
+  <div class="zoom-notification" id="zoom-notification">Hold Ctrl key while scrolling to zoom</div>
   <script>
     var commentFlag = true;
     
@@ -236,7 +262,8 @@
         };
 
         const ticked = () => {
-          node.attr("cx", (d) => d.x).attr("cy", (d) => d.y);
+          node.attr("x", (d) => d.x - nodeSize[d.id]*2)
+            .attr("y", (d) => d.y - nodeSize[d.id]*2);
           text
             .attr("x", (d) => d.x)
             .attr("y", (d) => d.y - (FONT_BASELINE - nodeSize[d.id]) / zoomLevel);
@@ -253,10 +280,12 @@
           node.exit().remove();
           node = node
             .enter()
-            .append("circle")
-            .attr("r", (d) => {
-              return nodeSize[d.id];
-            })
+            .append("image")
+            .attr("href", (d) => d.image || "/assets/flower.png") // Use node's image property or default
+            .attr("width", (d) => nodeSize[d.id] * 4) 
+            .attr("height", (d) => nodeSize[d.id] * 4)
+            .attr("x", (d) => -nodeSize[d.id]*2) // Offset to center the image
+            .attr("y", (d) => -nodeSize[d.id]*2) // Offset to center the image
             .on("click", onClick)
             .on("mouseover", onMouseover)
             .on("mouseout", onMouseout)
@@ -295,11 +324,39 @@
           ticked();
         };
 
-        const zoomHandler = d3.zoom().scaleExtent([0.2, 3]).on("zoom", resize);
+        // Replace the zoomHandler code with this:
+const zoomHandler = d3.zoom()
+  .scaleExtent([0.2, 3])
+  .filter(function() {
+    // Only zoom when ctrl key is pressed
+    return d3.event.ctrlKey || d3.event.metaKey;
+  })
+  .on("zoom", resize);
 
-        zoomHandler(svg);
-        restart();
+zoomHandler(svg);
 
+// Add this code to handle the notification
+const notification = document.getElementById('zoom-notification');
+let notificationTimeout;
+
+// Add wheel event listener to the SVG
+svg.node().addEventListener('wheel', function(event) {
+  // If ctrl key is not pressed, show notification
+  if (!event.ctrlKey && !event.metaKey) {
+    // Clear any existing timeout
+    clearTimeout(notificationTimeout);
+    
+    // Show notification
+    notification.classList.add('show');
+    
+    // Hide notification after 2 seconds
+    notificationTimeout = setTimeout(function() {
+      notification.classList.remove('show');
+    }, 2000);
+  }
+});
+
+restart();
         function isCurrentPath(notePath) {
           return window.location.pathname.includes(notePath)
         }
