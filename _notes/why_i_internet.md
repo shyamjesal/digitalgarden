@@ -8,6 +8,6 @@ I enjoy searching the internet to find interesting things, and it makes me happy
 
 I am a PhD. student at The University of Edinburgh, School of Informatics. My interests include query planning, serverless computing, data analytics. 
 
-More about me: [[CV]] [[resume]].
+More about me: [[CV]].
 
-In my free time, I enjoy playing ultimate frisbee, making origami flowers/planes and reading books & hackernews.
+In my free time, I enjoy climbing big rocks, playing ultimate frisbee, making origami flowers/planes and reading books.
